@@ -3,9 +3,16 @@ const tombolTambah = document.getElementById('tambah');
 tombolTambah.addEventListener('click', tambahAngka);
 
 function tambahAngka() {
-  const angka = document.getElementById('angka');
-  angka.textContent++
+  const angkaElement = document.getElementById('angka');
+  let currentAngka = parseInt(angkaElement.textContent);
+
+  angkaElement.textContent = currentAngka + 1;
+
+  if ((currentAngka + 1) % 50 === 0) {
+    alert('Angka sekarang adalah kelipatan 50!');
+  }
 }
+
 
 const tombolKurang = document.getElementById('kurang');
 tombolKurang.addEventListener('click', kurangiAngka);
